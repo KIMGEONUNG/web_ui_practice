@@ -11,7 +11,7 @@ Finally, I would like to construct a demo program for my research in some future
 | A001 | Load image to _div_ element    | Complete |
 | A002 | Load image to _img_ element    | Complete |
 | A003 | Load image to _canvas_ element | Complete |
-| A004 | Dynamic canvas size            | Todo     |
+| A004 | Dynamic canvas size            | Complete |
 | A005 | Stroke on canvas               | Todo     |
 | A006 | Export canvas image            | Todo     |
 | A007 | Change stroke size             | Todo     |
