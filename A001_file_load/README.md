@@ -44,3 +44,5 @@ image_input.addEventListener("change", function() {
 ```
 
 The _document.querySelector()_ returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, _null_ is returned. This has similar usage with _document.getElementById_. Let's first understand that the querySelector has more flexible usages.
+
+Note that the _load_ event is triggered by invoking _reader.readAsDataURL()_. Therefore, Removing the function call, the load event would not be triggered.
