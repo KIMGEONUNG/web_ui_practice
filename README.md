@@ -9,7 +9,7 @@ Finally, I would like to construct a demo program for my research in some future
 | ID   | Title                          | State    |  
 |------|------------------------------- | ---------|
 | [A001](A001_file_load/README.md) | Load image to _div_ element    | Complete |
-| A002 | Load image to _img_ element    | Complete |
+| [A002](A002_file_load) | Load image to _img_ element    | Complete |
 | A003 | Load image to _canvas_ element | Complete |
 | A004 | Dynamic canvas size            | Complete |
 | A005 | Stroke on canvas               | Todo     |
