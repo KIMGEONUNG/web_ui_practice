@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="display:block;">
+    <div>
+      <input type="file" id="image-input" accept="image/*">
+    </div>
+
+    <div>
+      <canvas id="display-image" width="500" height="500"></canvas>
+    </div>
+    <div>
+      <label for="colorpicker">Color Picker:</label>
+      <input id="colorpicker" type="color" value="#0000ff">
+    </div>
+    <div>
+      <button type="button" onclick="save()">Save Image</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
