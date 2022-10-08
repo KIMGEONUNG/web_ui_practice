@@ -1,0 +1,13 @@
+#display-image{
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+  cursor: none;
+}
+
+.rounded{
+  width: 30px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
