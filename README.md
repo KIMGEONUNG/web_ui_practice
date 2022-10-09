@@ -18,6 +18,7 @@ Finally, I would like to construct a demo program for my research in some future
 | [A008](A008_colorpicker)      | Change color using color picker | Complete |
 | [A009](A009_custom_cursor)    | Change cursor shape             | Fail     |
 | [A010](A010_good_stroke)      | Fix stroke discontinuity        | Fail     |
+| [A011](A011_drag_drop)        | Drag and drop an image          | todo     |
 | A000                          | Canvas multiple layers          | Todo     |
 | A000                          | Merge multiple layers           | Todo     |
 | A000                          | Simple IPC between web&python   | Todo     |
