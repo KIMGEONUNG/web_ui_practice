@@ -16,12 +16,13 @@ Finally, I would like to construct a demo program for my research in some future
 | [A006](A006_save_canvas)      | Export canvas image             | Complete |
 | [A007](A007_save_canvas3name) | Export canvas image with name   | Fail     |
 | [A008](A008_colorpicker)      | Change color using color picker | Complete |
-| [A009](A009_custom_cursor)    | Change cursor shape             | Todo     |
+| [A009](A009_custom_cursor)    | Change cursor shape             | Fail     |
 | [A010](A010_good_stroke)      | Fix stroke discontinuity        | Fail     |
-| A007                          | Change stroke size with wheel   | Todo     |
 | A000                          | Canvas multiple layers          | Todo     |
 | A000                          | Merge multiple layers           | Todo     |
+| A000                          | Simple IPC between web&python   | Todo     |
 | Z000                          | Load image using drag and drop  | Future   |
+| Z000                          | Change stroke size with wheel   | Future   |
 | Z000                          | Zoom in and out                 | Future   |
 | Z000                          | Pan on cavas                    | Future   |
 | Z000                          | Parallel zoom-in view           | Future   |

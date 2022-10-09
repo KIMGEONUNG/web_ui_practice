@@ -2,12 +2,15 @@
   border: 1px solid black;
   background-position: center;
   background-size: cover;
-  cursor: none;
+  cursor: crosshair;
 }
 
 .rounded{
-  width: 30px;
-  height: 30px;
-  border: 2px solid black;
+  width: 8px;
+  height: 8px;
+  position: relative;
+  bottom: 6px;
+  right: 6px;
+  border: 1px solid black;
   border-radius: 50%;
 }

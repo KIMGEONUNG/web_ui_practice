@@ -2,6 +2,16 @@ const image_input = document.querySelector("#image-input");
 const canvas = document.querySelector("#display-image") // canvas element
 const ctx = canvas.getContext('2d')
 
+const cursorRounded = document.querySelector('.rounded');
+const moveCursor = (e)=> {
+  const mouseY = e.clientY;
+  const mouseX = e.clientX;
+  cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+  cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+}
+canvas.addEventListener('mousemove', moveCursor)
+
+
 var toggle = false
 var radius = 8.0
 
