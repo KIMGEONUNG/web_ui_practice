@@ -2,7 +2,37 @@ const image_input = document.querySelector("#image-input");
 const canvas = document.querySelector("#display-image") // canvas element
 const ctx = canvas.getContext('2d')
 
-//////////////////////////////////////////////////////////////////////////////
+var coef_scale = 2
+
+function zoomin() {
+  console.log('zoomin')
+  img = new Image()
+  img.onload = function() {
+    canvas.width = img.width
+    canvas.height = img.height
+    ctx.scale(coef_scale, coef_scale)
+    ctx.drawImage(img, 0, 0);
+  };
+  img.src = canvas.toDataURL("image/png", 1.0);
+}
+
+function zoomout() {
+  console.log('zoomout')
+  img = new Image()
+  img.onload = function() {
+    canvas.width = img.width
+    canvas.height = img.height
+    ctx.scale(1 / coef_scale, 1 / coef_scale)
+    ctx.drawImage(img, 0, 0);
+  };
+  img.src = canvas.toDataURL("image/png", 1.0);
+}
+
+function pan() {
+  console.log('pan')
+}
+// DRAG AND DROP ///////////////////////////////////////////////////////////////
+
 // Event listener for dragging the image over the div
 canvas.addEventListener('dragover', (event) => {
   // console.log('dragover event in canvas')
@@ -72,22 +102,9 @@ function findxy(e) {
   return [e['layerX'], e['layerY']]
 }
 
-image_input.addEventListener("change", function() {
-  const reader = new FileReader();
-  reader.addEventListener("load", () => {
-    const uploaded_image = reader.result;
-
-    img = new Image()
-    img.onload = function() {
-      canvas.width = img.width
-      canvas.height = img.height
-      ctx.drawImage(img, 0, 0);
-    };
-    img.src = uploaded_image
-  });
-  reader.readAsDataURL(this.files[0]);
+image_input.addEventListener("change", (event) => {
+  readImage(event.target.files[0])
 });
-
 
 function save() {
   var dataURL = canvas.toDataURL("image/jpeg", 1.0);
