@@ -10,6 +10,7 @@ function zoomin() {
   img.onload = function() {
     canvas.width = img.width
     canvas.height = img.height
+    ctx.imageSmoothingEnabled = false;
     ctx.scale(coef_scale, coef_scale)
     ctx.drawImage(img, 0, 0);
   };
