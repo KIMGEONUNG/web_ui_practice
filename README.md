@@ -19,11 +19,11 @@ Finally, I would like to construct a demo program for my research in some future
 | [A009](A009_custom_cursor)    | Change cursor shape             | Fail     |
 | [A010](A010_good_stroke)      | Fix stroke discontinuity        | Fail     |
 | [A011](A011_drag_drop)        | Drag and drop an image          | Complete |
-| [A012](A012_zoom)             | Zoom in and out                 | Toto     |
+| [A012](A012_zoom)             | Zoom in and out                 | Todo     |
+| A000                          | Pan on cavas                    | Todo     |
 | A000                          | Canvas multiple layers          | Todo     |
 | A000                          | Merge multiple layers           | Todo     |
 | A000                          | Simple IPC between web&python   | Todo     |
-| A000                          | Pan on cavas                    | Future   |
 | Z000                          | Load image using drag and drop  | Future   |
 | Z000                          | Change stroke size with wheel   | Future   |
 | Z000                          | Parallel zoom-in view           | Future   |
