@@ -2,7 +2,12 @@ const image_input = document.querySelector("#image-input");
 const canvas = document.querySelector("#display-image") // canvas element
 const ctx = canvas.getContext('2d')
 
-var coef_scale = 2
+var img_original;
+var coef_scale = 2;
+var scale_agg = 1;
+
+var lastX=canvas.width/2, lastY=canvas.height/2;
+var dragStart,dragged;
 
 function zoomin() {
   console.log('zoomin')
@@ -11,10 +16,11 @@ function zoomin() {
     canvas.width = img.width
     canvas.height = img.height
     ctx.imageSmoothingEnabled = false;
-    ctx.scale(coef_scale, coef_scale)
+    scale_agg *= coef_scale
+    ctx.scale(scale_agg, scale_agg)
     ctx.drawImage(img, 0, 0);
   };
-  img.src = canvas.toDataURL("image/png", 1.0);
+  img.src = img_original
 }
 
 function zoomout() {
@@ -23,10 +29,12 @@ function zoomout() {
   img.onload = function() {
     canvas.width = img.width
     canvas.height = img.height
-    ctx.scale(1 / coef_scale, 1 / coef_scale)
+    scale_agg *= (1 / coef_scale)
+    ctx.scale(scale_agg, scale_agg)
     ctx.drawImage(img, 0, 0);
   };
-  img.src = canvas.toDataURL("image/png", 1.0);
+  // img.src = canvas.toDataURL("image/png", 1.0);
+  img.src = img_original
 }
 
 function pan() {
@@ -57,21 +65,21 @@ canvas.addEventListener('drop', (event) => {
 readImage = (file) => {
   const reader = new FileReader();
   reader.addEventListener('load', (event) => {
-    var uploaded_image = event.target.result;
+    img_original = event.target.result;
     img = new Image()
     img.onload = function() {
       canvas.width = img.width
       canvas.height = img.height
       ctx.drawImage(img, 0, 0);
     };
-    img.src = uploaded_image
+    img.src = img_original
   });
   reader.readAsDataURL(file);
 }
 //////////////////////////////////////////////////////////////////////////////
 
 var toggle = false
-var radius = 4.0
+var radius = 12.0 
 
 const colorpicker = document.getElementById("colorpicker")
 var color = colorpicker.value
@@ -80,6 +88,10 @@ colorpicker.addEventListener("change", function(v) {
 })
 
 canvas.addEventListener("mousemove", function(e) {
+  lastX = e.offsetX || (e.pageX - canvas.offsetLeft);
+  lastY = e.offsetY || (e.pageY - canvas.offsetTop);
+  dragged = true;
+
   xy = findxy(e)
   if (toggle) {
     ctx.beginPath();
@@ -97,6 +109,34 @@ canvas.addEventListener("mouseup", function(e) {
 canvas.addEventListener("mouseout", function(e) {
   toggle = false
 }, false);
+
+
+var scaleFactor = 1.1;
+var zoom = function(clicks){
+  ctx.translate(lastX, lastY);
+  var factor = Math.pow(scaleFactor,clicks);
+  ctx.scale(factor,factor);
+  ctx.translate(lastX, lastY);
+
+  // redraw();
+  img = new Image()
+  img.onload = function() {
+    canvas.width = img.width
+    canvas.height = img.height
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(img, 0, 0);
+  };
+  img.src = img_original
+}
+
+var handleScroll = function(evt){
+  var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
+  if (delta) zoom(delta);
+  return evt.preventDefault() && false;
+};
+
+canvas.addEventListener('DOMMouseScroll',handleScroll,false);
+canvas.addEventListener('mousewheel',handleScroll,false);
 
 function findxy(e) {
   // return [ e['clientX'], e['clientY'] ]
