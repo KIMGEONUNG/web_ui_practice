@@ -30,7 +30,7 @@ The prefix _Z_ means a low-priority future work.
 | A000                          | Canvas multiple layers          | Todo       |
 | A000                          | Merge multiple layers           | Todo       |
 | [B001](B001_backend)          | Simple IPC between web&python   | `Complete` |
-| [B002](B002_img_data)         | Transfer image data             | WIP        |
+| [B002](B002_img_data)         | Transfer image data             | `Complete` |
 
 ### Applications Demo
 
