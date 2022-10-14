@@ -25,12 +25,13 @@ The prefix _Z_ means a low-priority future work.
 | [A009](A009_custom_cursor)    | Change cursor shape             | Fail       |
 | [A010](A010_good_stroke)      | Fix stroke discontinuity        | Fail       |
 | [A011](A011_drag_drop)        | Drag and drop an image          | `Complete` |
-| [A012](A012_zoom_pan)         | Zoom in and out                 | Todo       |
+| [A012](A012_zoom_pan)         | Zoom in and out                 | Fail       |
+| [A013](A013_multilayer)       | Canvas multiple layers          | WIP        |
 | A000                          | Change stroke size with wheel   | Todo       |
-| A000                          | Canvas multiple layers          | Todo       |
-| A000                          | Merge multiple layers           | Todo       |
 | [B001](B001_backend)          | Simple IPC between web&python   | `Complete` |
 | [B002](B002_img_data)         | Transfer image data             | `Complete` |
+| B003                          | Transfer multiple data          | Toto       |
+| Z000                          | Merge multiple layers           | Todo       |
 
 ### Applications Demo
 

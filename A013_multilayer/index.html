@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div style="display:block;">
+    <div>
+      <input type="file" id="image-input" accept="image/*">
+    </div>
+
+    <div style="position: relative;">
+      <canvas id="display-image" width="500" height="500"
+      style="position: relative; left: 0; top: 0; z-index: 0;"></canvas>
+      <canvas id="display-stroke" width="500" height="500" 
+     style="position: absolute; left: 0; top: 0; z-index: 1;"></canvas>
+    </div>
+
+    <div style="position: block">
+      <input id="colorpicker" type="color" value="#0000ff">
+      <button type="button" onclick="zoomin()">ZoomIn</button>
+      <button type="button" onclick="zoomout()">ZoomOut</button>
+      <button type="button" onclick="pan()">Pan</button>
+      <button type="button" onclick="save()">Save Image</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
