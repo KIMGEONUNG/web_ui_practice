@@ -7,7 +7,7 @@ Finally, I would like to construct a demo program for my research in some future
 ### Practice List
 
 | ID                            | Title                           | State    |
-|---------------------------    |-------------------------------- | -------- |
+|-------------------------------|-------------------------------- | -------- |
 | [A001](A001_file_load)        | Load image to _div_ element     | Complete |
 | [A002](A002_file_load)        | Load image to _img_ element     | Complete |
 | [A003](A003_file_load)        | Load image to _canvas_ element  | Complete |
@@ -23,7 +23,7 @@ Finally, I would like to construct a demo program for my research in some future
 | A000                          | Pan on cavas                    | Todo     |
 | A000                          | Canvas multiple layers          | Todo     |
 | A000                          | Merge multiple layers           | Todo     |
-| A000                          | Simple IPC between web&python   | Todo     |
+| [B001](B001_backend)          | Simple IPC between web&python   | Todo     |
 | Z000                          | Load image using drag and drop  | Future   |
 | Z000                          | Change stroke size with wheel   | Future   |
 | Z000                          | Parallel zoom-in view           | Future   |
