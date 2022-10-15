@@ -1,0 +1,23 @@
+#display-image{
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
+}
+
+#display-stroke{
+  border: 2px solid red;
+  background-position: center;
+  background-size: cover;
+}
+
+canvas {
+ image-rendering: optimizeSpeed;
+ image-rendering: -moz-crisp-edges;
+ image-rendering: -webkit-optimize-contrast;
+ image-rendering: optimize-contrast;
+ interpolation-mode: nearest-neighbor;
+}
+
+.hdir{  
+
+}

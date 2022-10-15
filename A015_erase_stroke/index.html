@@ -21,6 +21,10 @@
     <div style="position: block">
       <input id="colorpicker" type="color" value="#0000ff">
       <button type="button" onclick="save()">Save Image</button>
+      <label for="stroke_size">stroke size</label>
+      <input id="stroke_size" type="number" value=12 
+      onchange="ch_strk_size(this.value)">
+      <button type="button" onclick="clearStroke()">Clear Stroke</button>
     </div>
   </div>
   <script src="script.js"></script>

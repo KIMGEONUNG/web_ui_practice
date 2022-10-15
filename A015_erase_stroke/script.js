@@ -45,7 +45,28 @@ readImage = (file) => {
 //////////////////////////////////////////////////////////////////////////////
 
 var toggle = false
-var radius = 12.0 
+var radius = document.getElementById('stroke_size').value
+function ch_strk_size(size) {
+  if (Number(size) < 2) {
+    size = 2
+  }
+  radius = size
+  document.getElementById('stroke_size').value = size
+}
+
+function clearStroke() {
+  ctx_strk.clearRect(0, 0, canvas_strk.width, canvas_strk.height)
+}
+
+var handleScroll = function(evt){
+  var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
+  if (delta) ch_strk_size(delta > 1 ? Number(radius) + 1 : Number(radius) - 1);
+  return evt.preventDefault() && false;
+};
+
+canvas_strk.addEventListener('DOMMouseScroll',handleScroll,false);
+canvas_strk.addEventListener('mousewheel',handleScroll,false);
+
 
 const colorpicker = document.getElementById("colorpicker")
 var color = colorpicker.value
