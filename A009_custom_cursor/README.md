@@ -11,19 +11,6 @@ The alternative is to use a predefined cursor shape in css.
 I found that _crosshair_ cursor shape could be a unsatisfactory, but reasonable solution. 
 
 
-
-## Code and Results
-
-```css
-#display-image{
-  border: 1px solid black;
-  background-position: center;
-  background-size: cover;
-  cursor: crosshair; // this change the cursor shape.
-}
-```
-
 ## References
 
-- [w3schools](https://www.w3schools.com/cssref/pr_class_cursor.asp): list of predefined cursors
-- [freecodecamp](https://www.freecodecamp.org/news/how-to-make-a-custom-mouse-cursor-with-css-and-javascript/): customization tutorial using image file or javascript.
+- [codepen](https://codepen.io/ntenebruso/pen/QWLzVjY) 

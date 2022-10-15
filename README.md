@@ -28,7 +28,7 @@ The prefix _Z_ means a low-priority future work.
 | [A012](A012_zoom_pan)         | Zoom in and out                 | Fail       |
 | [A013](A013_multilayer)       | Canvas multiple layers          | `Complete` |
 | [A014](A014_wheel4stroke)     | Change stroke size with wheel   | `Complete` |
-| [A015](A015_erase_stroke)     | Erase stroke                    | Toto       |
+| [A015](A015_erase_stroke)     | Erase stroke                    | `Complete` |
 | [B001](B001_backend)          | Simple IPC between web&python   | `Complete` |
 | [B002](B002_img_data)         | Transfer image data             | `Complete` |
 | B003                          | Transfer multiple data          | Toto       |

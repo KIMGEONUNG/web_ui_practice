@@ -11,6 +11,7 @@
 }
 
 canvas {
+ cursor: none;
  image-rendering: optimizeSpeed;
  image-rendering: -moz-crisp-edges;
  image-rendering: -webkit-optimize-contrast;
@@ -21,3 +22,17 @@ canvas {
 .hdir{  
 
 }
+
+
+.cursor {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: black;
+  opacity: .3;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width .3s, height .3s, opacity .3s;
+}
+

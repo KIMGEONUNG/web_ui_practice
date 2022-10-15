@@ -1,7 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 * {
-  /* cursor: none; */
+  cursor: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -84,4 +84,3 @@ a:hover:after{
   height: 50px;
   opacity: .5;
 }
-

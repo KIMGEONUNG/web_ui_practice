@@ -5,6 +5,14 @@ const ctx = canvas.getContext('2d')
 const canvas_strk = document.querySelector("#display-stroke") // canvas element
 const ctx_strk = canvas_strk.getContext('2d')
 
+var cursor = document.querySelector('.cursor');
+canvas_strk.addEventListener('mousemove', function(e){
+  var x = e.clientX;
+  var y = e.clientY;
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
+});
+
 var img_original;
 
 canvas.addEventListener('dragover', (event) => {
@@ -52,6 +60,8 @@ function ch_strk_size(size) {
   }
   radius = size
   document.getElementById('stroke_size').value = size
+  cursor.style.width = Number(size) * 2 + 'px' 
+  cursor.style.height = Number(size) * 2 + 'px'
 }
 
 function clearStroke() {
