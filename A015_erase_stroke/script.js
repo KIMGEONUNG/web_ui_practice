@@ -93,8 +93,15 @@ canvas_strk.addEventListener("mousemove", function(e) {
     ctx_strk.fill();
   }
 }, false);
+
 canvas_strk.addEventListener("mousedown", function(e) {
   toggle = true
+  if (toggle) {
+    ctx_strk.beginPath();
+    ctx_strk.arc(xy[0], xy[1], radius, 0, Math.PI * 2, true);
+    ctx_strk.fillStyle = color
+    ctx_strk.fill();
+  }
 }, false);
 canvas_strk.addEventListener("mouseup", function(e) {
   toggle = false
