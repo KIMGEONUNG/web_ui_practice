@@ -4,8 +4,23 @@ var c_blur = document.getElementById("c_blur")
 
 var original = new Image;
 var blur = new Image;
+var txt
+
 original.src = 'srcs/sample01.jpg';
 blur.src = 'srcs/sample01_blur3.0.jpg';
+
+
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'srcs/targets.txt', true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        console.log(xhr.responseText);
+        txt = xhr.responseText
+    }
+};
+xhr.send();
+
+
 
 function redraw(img, ctx) {
   var p1 = ctx.transformedPoint(0, 0);
@@ -32,7 +47,7 @@ window.onload = function() {
     lastX = evt.offsetX || (evt.pageX - c_gt.offsetLeft);
     lastY = evt.offsetY || (evt.pageY - c_gt.offsetTop);
     dragStart = ctx_gt.transformedPoint(lastX, lastY);
-                ctx_blur.transformedPoint(lastX, lastY);
+    ctx_blur.transformedPoint(lastX, lastY);
     dragged = false;
   }, false);
 

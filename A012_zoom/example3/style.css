@@ -1,0 +1,6 @@
+body { background:#eee; margin:1em; text-align:center; }
+canvas { display:block; margin:1em auto; background:#fff; border:1px solid #ccc; image-rendering: pixelated;}
+img { image-rendering: pixelated; }
+.container {
+	flex-wrap: wrap;
+}
