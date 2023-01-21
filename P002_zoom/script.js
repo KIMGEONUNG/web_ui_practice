@@ -2,12 +2,15 @@
 var pane = document.getElementById("pane");
 var btn_next = document.getElementById("btn_next");
 var btn_previous = document.getElementById("btn_previous");
+var btn_export = document.getElementById("btn_export");
+
 var idx = 0;
 var size = 500;
 var len = 0;
 var config_obj;
 var imgs = {};
 var ctxs = {};
+var cnvs = {};
 
 event_move = (logic) => {
   return () => {
@@ -29,8 +32,34 @@ event_move = (logic) => {
   }
 }
 
-btn_next.addEventListener("click", event_move((a) => { return (a + 1) % len }))
-btn_previous.addEventListener("click", event_move((a) => { return Math.max(0, a - 1) % len }))
+btn_next.addEventListener("click", event_move((a) => { return Math.min(a + 1, len - 1) }))
+btn_previous.addEventListener("click", event_move((a) => { return Math.max(0, a - 1) }))
+btn_export.addEventListener("click", function() {
+  for (const key in config_obj) {
+    if (config_obj.hasOwnProperty(key)) {
+      let cnv = cnvs[key]
+      let dataURL = cnv.toDataURL("image/png", 1.0);
+      let path = 'outputs_' + key + ".png"
+      downloadImage(dataURL, path);
+    }
+  }
+})
+
+function downloadImage(data, filename = 'untitled.jpeg') {
+  var a = document.createElement('a');
+  a.href = data;
+  a.download = filename;
+  a.click();
+  a.remove();
+}
+
+function set2pixelated(ctx) {
+  ctx.mozImageSmoothingEnabled = false;
+  ctx.oImageSmoothingEnabled = false;
+  ctx.webkitImageSmoothingEnabled = false;
+  ctx.msImageSmoothingEnabled = false;
+  ctx.imageSmoothingEnabled = false;
+}
 
 window.onload = async function() {
   let config = await fetch("srcs/config.json")
@@ -43,15 +72,22 @@ window.onload = async function() {
       len = element.length
 
       // CREATE CANVAS
+      let div = document.createElement('div');
+      let label = document.createElement('p');
+      label.textContent = key
       let canvas = document.createElement('canvas');
       let ctx = canvas.getContext('2d');
+
       ctxs[key] = ctx;
+      cnvs[key] = canvas;
       trackTransforms(ctx);
 
       canvas.width = size
       canvas.height = size
       canvas.id = key
-      pane.appendChild(canvas);
+      div.appendChild(canvas)
+      div.appendChild(label)
+      pane.appendChild(div);
 
       // ADD IMAGE
       let img = new Image;
@@ -92,6 +128,7 @@ window.onload = async function() {
         if (!dragged) zoom(evt.shiftKey ? -1 : 1);
       }, false);
 
+      // ENROLL ZOOM
       var scaleFactor = 1.05;
       var zoom = function(clicks) {
         var factor = Math.pow(scaleFactor, clicks);
@@ -118,6 +155,7 @@ window.onload = async function() {
 }
 
 function redraw(img, ctx, width, height) {
+  set2pixelated(ctx)
   var p1 = ctx.transformedPoint(0, 0);
   var p2 = ctx.transformedPoint(width, height);
   ctx.clearRect(p1.x, p1.y, p2.x - p1.x, p2.y - p1.y);

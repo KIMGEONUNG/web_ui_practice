@@ -1,3 +1,3 @@
-## Todo
-- Nearest nighbor
-- Save images
+## Motivation
+
+See QualCmp repository
