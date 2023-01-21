@@ -1,5 +1,4 @@
 ## Todo
 - parse the file list
-- change image
-- Multiple items
+- Save images
 - nearest nighbor

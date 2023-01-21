@@ -1,6 +1,3 @@
-srcs/gt/0.jpg
-srcs/gt/10000.jpg
-srcs/n1/0.jpg
-srcs/n1/10000.jpg
-srcs/n2/0.jpg
-srcs/n2/10000.jpg
+gt
+n1
+n2
