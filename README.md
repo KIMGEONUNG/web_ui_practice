@@ -39,7 +39,7 @@ The prefix _Z_ means a low-priority future work.
 | ID    | Title                           | State    |
 |-------|-------------------------------- | -------- |
 | P001  | Stroke Generator                | Future   |
-| P002  | Parallel Zoom                   | Future   |
+| [P002](P002_zoom)  | Parallel Zoom                   | `WIP` |
 
 ### References
 
